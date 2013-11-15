@@ -20,6 +20,7 @@ static: $(OBJS)
 	$(CC) $(LDFLAGS) --static $(OBJS) $(LIBS) -o calibrator
 
 install:
+	@mkdir -p $(NFSROOT)/home/root
 	@echo Copy files to $(NFSROOT)/home/root
 	@cp -f ./calibrator $(NFSROOT)/home/root
 	@cp -f ./scripts/go.sh $(NFSROOT)/home/root
